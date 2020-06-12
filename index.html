@@ -11,7 +11,7 @@
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <header id="header">
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="/img/original_trombones.png" width="300x300"></a>
+  <a class="navbar-brand" href="#"><img src="img/original_trombones.png" width="300x300"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,19 +19,60 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#features">Features</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">How it Works</a>
+        <a class="nav-link" href="#how-it-works">How it Works</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
       </li>
     </ul>
-   
   </div>
 </nav>
     </header>
+
+    <div class="section" id="features">
+      <form>
+        <div class="form-group needs-validation">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control is-invalid" id="email" aria-describedby="emailHelp" placeholder="name@example.com">
+          <div class="invalid-feedback">
+            Please provide a valid Email.
+          </div>
+          <small id="emailHelp" class="form-text text-muted">Enter your email, please.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+    </div>
+    <div class="section" id="how-it-works">
+      <div id="video" class="align-self-center mr-3">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      </div>
+    </div>
+    <div class="section" id="pricing"></div>
+
     <script  src="js/index.js"></script>
   </body>
 </html>
